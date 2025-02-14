@@ -31,18 +31,18 @@ export default function Header() {
       {/* Mobile Menu Items (Dropdown) */}
       {menuOpen && (
         <View style={{ marginTop: 10 }}>
-          {/* <TouchableOpacity onPress={() => router.push("/features")}>
+          <TouchableOpacity onPress={() => router.push("/")}>
             <Text style={{ color: "gray" }}>Features</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => router.push("/about")}>
+          <TouchableOpacity onPress={() => router.push("/")}>
             <Text style={{ color: "gray" }}>About</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => router.push("/pricing")}>
+          <TouchableOpacity onPress={() => router.push("/")}>
             <Text style={{ color: "gray" }}>Pricing</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => router.push("/contact")}>
+          <TouchableOpacity onPress={() => router.push("/")}>
             <Text style={{ color: "gray" }}>Contact</Text>
-          </TouchableOpacity> */}
+          </TouchableOpacity>
         </View>
       )}
     </View>

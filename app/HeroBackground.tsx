@@ -7,7 +7,6 @@ export default function HeroSection() {
 
   return (
           <View style={styles.container}>
-      <View style={styles.overlay}>
         <Text style={styles.title}>Revolutionizing Fuel Management</Text>
         <Text style={styles.subtitle}>
           Save Fuel with Our New-age IoT Fuel Management System
@@ -15,7 +14,6 @@ export default function HeroSection() {
         <TouchableOpacity style={styles.button} onPress={() => router.push("/")}>
           <Text style={styles.buttonText}>Start Saving Today</Text>
         </TouchableOpacity>
-      </View>
     </View>
   );
 }
@@ -24,14 +22,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     position: "relative",
-    backgroundColor: '#0f172a',
-  },
-  overlay: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.4)", // Dark overlay for text visibility
-    paddingHorizontal: 20,
   },
   title: {
     fontSize: 32,
