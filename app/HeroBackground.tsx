@@ -6,21 +6,16 @@ export default function HeroSection() {
   const router = useRouter();
 
   return (
-    <View style={{
-      ...StyleSheet.absoluteFillObject, 
-      backgroundColor: '#0f172a'
-    }}>
           <View style={styles.container}>
       <View style={styles.overlay}>
         <Text style={styles.title}>Revolutionizing Fuel Management</Text>
         <Text style={styles.subtitle}>
           Save Fuel with Our New-age IoT Fuel Management System
         </Text>
-        {/* <TouchableOpacity style={styles.button} onPress={() => router.push("/pricing")}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push("/")}>
           <Text style={styles.buttonText}>Start Saving Today</Text>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
       </View>
-    </View>
     </View>
   );
 }
@@ -29,8 +24,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     position: "relative",
-    // backgroundColor: '#1e293b',
-    opacity: 0.5,
+    backgroundColor: '#0f172a',
   },
   overlay: {
     flex: 1,
