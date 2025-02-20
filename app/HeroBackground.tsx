@@ -1,6 +1,7 @@
 import { Video, ResizeMode } from "expo-av";
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import { useRouter } from "expo-router";
+const { height } = Dimensions.get('window'); 
 
 export default function HeroSection() {
   const router = useRouter();
@@ -20,7 +21,9 @@ export default function HeroSection() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: height,
+    justifyContent: 'center',
+    alignItems: 'center',
     position: "relative",
   },
   title: {

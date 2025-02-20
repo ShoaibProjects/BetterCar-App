@@ -12,7 +12,7 @@ export default function Header() {
       position: "absolute",
       top: 0,
       width: "100%",
-      backgroundColor: "rgba(15, 23, 42, 0.9)",
+      backgroundColor: "#0f172a",
       padding: 15,
       zIndex: 50,
     }}
@@ -31,7 +31,7 @@ export default function Header() {
       {/* Mobile Menu Items (Dropdown) */}
       {menuOpen && (
         <View style={{ marginTop: 10 }}>
-          <TouchableOpacity onPress={() => router.push("/")}>
+          <TouchableOpacity onPress={() => router.push("/features")}>
             <Text style={{ color: "gray" }}>Features</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => router.push("/")}>
