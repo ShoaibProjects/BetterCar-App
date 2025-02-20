@@ -1,26 +1,59 @@
-import React from "react";
-import { View, Text, TextInput, TouchableOpacity, ScrollView, Dimensions } from "react-native";
-const { height } = Dimensions.get('window'); 
+import React, { useState } from "react";
+import { View, Text, TextInput, TouchableOpacity, Dimensions, KeyboardTypeOptions } from "react-native";
+
+const { height } = Dimensions.get("window");
 
 const ContactForm = () => {
+  const [focusedField, setFocusedField] = useState<string | null>(null);
+
+  const fields = [
+    { placeholder: "Name", type: "default" as KeyboardTypeOptions },
+    { placeholder: "Email", type: "email-address" as KeyboardTypeOptions },
+    { placeholder: "Company", type: "default" as KeyboardTypeOptions },
+    { placeholder: "Phone", type: "phone-pad" as KeyboardTypeOptions },
+    { placeholder: "Number of Vehicles", type: "number-pad" as KeyboardTypeOptions },
+    { placeholder: "Message", type: "default" as KeyboardTypeOptions, multiline: true, height: 100, textAlignVertical: "top" as const },
+  ];
+
   return (
-    <View style={{ height:height, justifyContent:'center', alignItems:'center', paddingVertical: 5, backgroundColor: "#0f172a", paddingHorizontal: 5,  }}>
-      <View style={{ maxWidth: "100%", alignSelf: "center", paddingHorizontal:12}}>
-        <Text style={{ fontSize: 28, fontWeight: "bold", color: "#fff", textAlign: "center", marginBottom: 24 }}>
+    <View
+      style={{
+        height: height,
+        justifyContent: "center",
+        alignItems: "center",
+        paddingVertical: 5,
+        backgroundColor: "#0f172a",
+        paddingHorizontal: 5,
+      }}
+    >
+      <View style={{ maxWidth: "100%", alignSelf: "center", paddingHorizontal: 12 }}>
+        <Text style={{ fontSize: 32,
+    fontWeight: "bold",
+    color: "#76A9FA", textAlign: "center", marginBottom: 36 }}>
           Ready to Optimize Your Fleet?
         </Text>
-        <View style={{ gap: 16, justifyContent:'center'}}>
-          <View style={{ flexDirection: "row", gap: 16, justifyContent:'center'}}>
-            <TextInput placeholder="Name" placeholderTextColor="#ccc" style={styles.input} />
-            <TextInput placeholder="Email" placeholderTextColor="#ccc" style={styles.input} keyboardType="email-address" />
-          </View>
-          <View style={{ flexDirection: "row", gap: 16 }}>
-            <TextInput placeholder="Company" placeholderTextColor="#ccc" style={styles.input} />
-            <TextInput placeholder="Phone" placeholderTextColor="#ccc" style={styles.input} keyboardType="phone-pad" />
-          </View>
-          <TextInput placeholder="Number of Vehicles" placeholderTextColor="#ccc" style={[styles.input, {width:"100%"}]} keyboardType="numeric" />
-          <TextInput placeholder="Message" placeholderTextColor="#ccc" style={[styles.input, { height: 100, width:"100%", textAlignVertical: "top" }]} multiline />
-          <View style={{ alignItems: "center" }}>
+        <View style={{ gap: 24, justifyContent: "center" }}>
+          {fields.map((field, index) => (
+            <TextInput
+              key={index}
+              placeholder={field.placeholder}
+              placeholderTextColor="#ccc"
+              keyboardType={field.type}
+              multiline={field.multiline || false}
+              style={[
+                styles.input,
+                {
+                  borderColor: focusedField === field.placeholder ? "#3b82f6" : "#1F2937",
+                  borderWidth: 2,
+                },
+                field.height ? { height: field.height, textAlignVertical: field.textAlignVertical } : {},
+              ]}
+              onFocus={() => setFocusedField(field.placeholder)}
+              onBlur={() => setFocusedField(null)}
+              importantForAccessibility="no-hide-descendants" // Disables default yellow ring
+            />
+          ))}
+          <View style={{ alignItems: "center", marginTop:12 }}>
             <TouchableOpacity style={styles.button}>
               <Text style={{ color: "#fff", fontWeight: "bold" }}>Get Your Free Consultation</Text>
             </TouchableOpacity>
@@ -33,13 +66,13 @@ const ContactForm = () => {
 
 const styles = {
   input: {
-    // flex: 1,
-    width: "48%" as const,
-    backgroundColor: "#333",
+    flex: 1,
+    backgroundColor: "#1F2937",
     color: "#fff",
     paddingHorizontal: 10,
     paddingVertical: 12,
     borderRadius: 8,
+    outlineStyle: "none", // Disables browser focus outline in web environments
   },
   button: {
     backgroundColor: "#3b82f6",
