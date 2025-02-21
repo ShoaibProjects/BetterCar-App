@@ -34,13 +34,13 @@ export default function Header() {
           <TouchableOpacity onPress={() => router.push("/features")}>
             <Text style={{ color: "gray" }}>Features</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => router.push("/")}>
+          <TouchableOpacity onPress={() => router.push("/smallAbout")}>
             <Text style={{ color: "gray" }}>About</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => router.push("/")}>
+          <TouchableOpacity onPress={() => router.push("/pricing")}>
             <Text style={{ color: "gray" }}>Pricing</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => router.push("/")}>
+          <TouchableOpacity onPress={() => router.push("/contact")}>
             <Text style={{ color: "gray" }}>Contact</Text>
           </TouchableOpacity>
         </View>

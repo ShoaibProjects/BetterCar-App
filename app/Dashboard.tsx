@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { View, Text } from "react-native";
-import { fetchIoTData } from "./API/IOT-api";
+import { fetchIoTData } from "./API/IOT-api.jsx";
 
 interface FuelData {
   fuelLevel: number;

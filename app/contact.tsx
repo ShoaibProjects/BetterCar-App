@@ -26,7 +26,7 @@ const ContactForm = () => {
         paddingHorizontal: 5,
       }}
     >
-      <View style={{ maxWidth: "100%", alignSelf: "center", paddingHorizontal: 12 }}>
+      <View style={{ maxWidth: "100%", alignSelf: "center", paddingHorizontal: 12, marginBottom: 300 }}>
         <Text style={{ fontSize: 32,
     fontWeight: "bold",
     color: "#76A9FA", textAlign: "center", marginBottom: 36 }}>

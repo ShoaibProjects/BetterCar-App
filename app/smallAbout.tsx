@@ -13,7 +13,7 @@ const features = [
 const AboutBetterCar = () => {
   return (
     <View style={{ paddingVertical: 48, backgroundColor: "#0f172a" }}>
-      <View style={{ maxWidth: 800, alignSelf: "center", paddingHorizontal: 16 }}>
+      <View style={{ alignSelf: "center", paddingHorizontal: 16 }}>
         <View style={{ alignItems: "center", marginBottom: 24 }}>
           <Image
             source={require("../assets/images/BetterCarlogo.png")}
@@ -32,6 +32,7 @@ const AboutBetterCar = () => {
             provide complete visibility over your personal or fleet's fuel consumption.
           </Text>
           <FlatList
+            style={{ maxHeight: 200, flexShrink: 1 }}
             data={features}
             keyExtractor={(item, index) => index.toString()}
             renderItem={({ item, index }) => (

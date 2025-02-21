@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
     gap: 30, // Adjust spacing
+    marginBottom: 80,
   },
   card: {
     width: '95%',
