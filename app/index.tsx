@@ -10,10 +10,10 @@ export default function Index() {
     <ScrollView  contentContainerStyle={styles.container}
     >
       <Dashboard></Dashboard>
-      {/* <HeroSection></HeroSection>
+      <HeroSection></HeroSection>
       <Features></Features>
       <AboutBetterCar></AboutBetterCar>
-      <ContactForm></ContactForm> */}
+      <ContactForm></ContactForm>
     </ScrollView>
   );
 }

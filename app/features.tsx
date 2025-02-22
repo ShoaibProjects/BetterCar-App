@@ -11,15 +11,56 @@ interface Feature {
 }
 
 const features: Feature[] = [
-  { id: 1, title: 'Mileage Analysis', description: 'Accurately calculate the total mileage and fuel usage for each vehicle, helping you optimize performance and save on costs.', icon: LucideFuel },
-  { id: 2, title: 'Expense Analytics', description: 'Get detailed reports and actionable insights to optimize fuel consumption and reduce operational costs across your fleet.', icon: LucideBarChart },
-  { id: 3, title: 'Real-time Monitoring', description: 'Track fuel levels 24/7 with precision IoT sensors. Receive instant alerts for unauthorized activity, ensuring complete transparency and control.', icon: LucideMonitor },
-  { id: 4, title: 'Fuel Refueling Assurance', description: 'Rest assured of accurate fuel levels after every refueling, eliminating doubts caused by fuel scams and malpractices.', icon: LucideShieldCheck },
-  { id: 5, title: 'Repair Status Updates', description: 'Stay informed with real-time updates on the maintenance and repair status of your vehicle to minimize downtime and improve efficiency.', icon: LucideSettings },
-  { id: 6, title: 'Petrol Station Ratings Database', description: 'Introducing a much-needed rating system for petrol stations to help you choose reliable stations with confidence.', icon: LucideStar },
-  { id: 7, title: 'Theft Prevention', description: 'Our AI-powered algorithms detect suspicious patterns and alert you instantly in case of potential fuel theft, keeping your vehicle secure.', icon: LucideLock },
-  { id: 8, title: 'All in One', description: 'BetterCar supports all fuel types, including Petrol, Diesel, and CNG vehicles.', icon: LucideDroplet },
+  { 
+    id: 1, 
+    title: 'Mileage Analysis', 
+    description: 'Accurately calculate the total mileage and fuel usage for each vehicle, helping you optimize performance and save on costs.', 
+    icon: (props) => <LucideFuel {...props} /> 
+  },
+  { 
+    id: 2, 
+    title: 'Expense Analytics', 
+    description: 'Get detailed reports and actionable insights to optimize fuel consumption and reduce operational costs across your fleet.', 
+    icon: (props) => <LucideBarChart {...props} /> 
+  },
+  { 
+    id: 3, 
+    title: 'Real-time Monitoring', 
+    description: 'Track fuel levels 24/7 with precision IoT sensors. Receive instant alerts for unauthorized activity, ensuring complete transparency and control.', 
+    icon: (props) => <LucideMonitor {...props} /> 
+  },
+  { 
+    id: 4, 
+    title: 'Fuel Refueling Assurance', 
+    description: 'Rest assured of accurate fuel levels after every refueling, eliminating doubts caused by fuel scams and malpractices.', 
+    icon: (props) => <LucideShieldCheck {...props} /> 
+  },
+  { 
+    id: 5, 
+    title: 'Repair Status Updates', 
+    description: 'Stay informed with real-time updates on the maintenance and repair status of your vehicle to minimize downtime and improve efficiency.', 
+    icon: (props) => <LucideSettings {...props} /> 
+  },
+  { 
+    id: 6, 
+    title: 'Petrol Station Ratings Database', 
+    description: 'Introducing a much-needed rating system for petrol stations to help you choose reliable stations with confidence.', 
+    icon: (props) => <LucideStar {...props} /> 
+  },
+  { 
+    id: 7, 
+    title: 'Theft Prevention', 
+    description: 'Our AI-powered algorithms detect suspicious patterns and alert you instantly in case of potential fuel theft, keeping your vehicle secure.', 
+    icon: (props) => <LucideLock {...props} /> 
+  },
+  { 
+    id: 8, 
+    title: 'All in One', 
+    description: 'BetterCar supports all fuel types, including Petrol, Diesel, and CNG vehicles.', 
+    icon: (props) => <LucideDroplet {...props} /> 
+  },
 ];
+
 
 const Features = () => {
   const [focusedCard, setFocusedCard] = useState<number | null>(null);
