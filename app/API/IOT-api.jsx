@@ -2,16 +2,10 @@ import axios from "axios";
 
 const IOT_DEVICE_URL = "http://localhost:3000/fuelData"; // Replace with actual IP
 
-// Define an interface for the expected response structure
-export interface FuelData {
-  fuelLevel: number;
-  mileage: number;
-}
+export const fetchIoTData = async () => {
 
-// Define the function with a return type
-export const fetchIoTData = async (): Promise<FuelData> => {
   try {
-    const response = await axios.get<FuelData>(IOT_DEVICE_URL, { timeout: 5000 });
+    const response = await axios.get(IOT_DEVICE_URL, { timeout: 5000 });
 
     if (!response.data || typeof response.data.fuelLevel !== "number" || typeof response.data.mileage !== "number") {
       throw new Error("Invalid data format");
