@@ -11,7 +11,7 @@ export default function Index() {
     >
       <Dashboard></Dashboard>
       <HeroSection></HeroSection>
-      <Features></Features>
+      {/* <Features></Features> */}
       <AboutBetterCar></AboutBetterCar>
       <ContactForm></ContactForm>
     </ScrollView>
