@@ -1,26 +1,19 @@
 import { useEffect, useState } from "react";
 import { View, Text } from "react-native";
-import { fetchIoTData } from "./API/IOT-api.jsx";
+import { fetchIoTData } from "./API/IOT-api"; // Ensure path is correct
 
-interface FuelData {
-  fuelLevel: number;
-  mileage: number;
-}
-
-const Dashboard: React.FC = () => {
-  const [fuelData, setFuelData] = useState<FuelData | null>(null);
-  const [error, setError] = useState<string | null>(null);
+const Dashboard = () => {
+  const [fuelData, setFuelData] = useState({ fuelLevel: 0, mileage: 0 });
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const data: FuelData = await fetchIoTData();
+        const data = await fetchIoTData();
         setFuelData(data);
-        setError(null); // Clear previous error on success
+        setError(null);
       } catch (err) {
-        if (err instanceof Error) {
-          setError(err.message);
-        }
+        setError(err.message || "Unknown error");
       }
     };
 
@@ -31,16 +24,13 @@ const Dashboard: React.FC = () => {
   }, []);
 
   return (
-    <View style={{    flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      backgroundColor: "#162235",}}>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: "#162235" }}>
       {error ? (
         <Text style={{ color: "red" }}>{error}</Text>
       ) : (
         <>
-          <Text style={{color:'#ccc'}}>Fuel Level: {fuelData?.fuelLevel ?? "Loading..."} L</Text>
-          <Text style={{color:'#ccc'}}>Mileage: {fuelData?.mileage ?? "Loading..."} km</Text>
+          <Text style={{ color: "#ccc" }}>Fuel Level: {fuelData.fuelLevel} L</Text>
+          <Text style={{ color: "#ccc" }}>Mileage: {fuelData.mileage} km</Text>
         </>
       )}
     </View>

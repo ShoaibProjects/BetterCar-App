@@ -1,8 +1,0 @@
-{
-    "fuelData": {
-      "fuelLevel": 78,
-      "mileage": 1250,
-      "alerts": ["Low fuel detected!"]
-    }
-  }
-  
